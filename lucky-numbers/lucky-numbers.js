@@ -20,6 +20,19 @@ export function twoSum(array1, array2) {
  * @returns {boolean} whether the number is a palindrome or not
  */
 export function luckyNumber(value) {
+  const valueString = value.toString();
+  const removeCommas = valueString.split("");
+
+  let i = 0;
+  const newArr = [];
+  for (i = removeCommas.length - 1; i >= 0; i--) {
+    newArr.push(removeCommas[i]);
+  }
+  const num = Number(newArr.join(""));
+  if (value === num) {
+    return true;
+  }
+  return false;
   throw new Error("Implement the luckyNumber function");
 }
 
