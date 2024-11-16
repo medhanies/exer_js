@@ -10,3 +10,13 @@
  *   ...
  * }
  */
+
+export function cookingStatus(remainingTime) {
+  if (remainingTime === 0) {
+    return "Lasagna is done.";
+  }
+  if (remainingTime > 0) {
+    return "Not done, please wait.";
+  }
+  return "You forgot to set the timer.";
+}
