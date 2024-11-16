@@ -27,3 +27,16 @@ export function preparationTime(layers, time) {
   }
   return layers.length * 2;
 }
+
+export function quantities(layers) {
+  const obj = { noodles: 0, sauce: 0 };
+  for (let i = 0; i < layers.length; i++) {
+    if (layers[i] === "noodles") {
+      obj["noodles"] += 50;
+    }
+    if (layers[i] === "sauce") {
+      obj["sauce"] += 0.2;
+    }
+  }
+  return obj;
+}
