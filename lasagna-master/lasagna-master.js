@@ -40,3 +40,16 @@ export function quantities(layers) {
   }
   return obj;
 }
+
+export function addSecretIngredient(friendsList, myList) {
+  const lastItem = friendsList[friendsList.length - 1];
+  myList.push(lastItem);
+}
+
+export function scaleRecipe(recipe, number) {
+  const newRecipe = { ...recipe };
+  for (const key in recipe) {
+    newRecipe[key] = number * 0.5 * recipe[key];
+  }
+  return newRecipe;
+}
