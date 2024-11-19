@@ -36,6 +36,7 @@ export function onError() {
  */
 export function orderFromGrocer(query, onSuccessCallback, onErrorCallback) {
   // implement the orderFromGrocer function to order the query
+  order(query, onSuccessCallback, onErrorCallback);
 }
 
 /**
