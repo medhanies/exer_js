@@ -58,7 +58,7 @@ export function discardTopCard(deck) {
 
 /** @type {Card[]} **/
 const FACE_CARDS = ["jack", "queen", "king"];
-
+const [jack, queen, king] = FACE_CARDS;
 /**
  * Insert face cards into the given deck
  *
@@ -68,5 +68,8 @@ const FACE_CARDS = ["jack", "queen", "king"];
  * third, and fourth cards are the face cards
  */
 export function insertFaceCards(deck) {
+  const [first, ...everytingElse] = deck;
+  const newDeck = [first, jack, queen, king, ...everytingElse];
+  return newDeck;
   throw new Error("Implement the insertFaceCards function");
 }
