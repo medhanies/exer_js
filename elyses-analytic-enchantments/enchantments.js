@@ -40,6 +40,8 @@ export function doesStackIncludeCard(stack, card) {
  * @returns {boolean} true if all cards are even, false otherwise
  */
 export function isEachCardEven(stack) {
+  const isEven = stack.every((n) => n % 2 == 0);
+  return isEven;
   throw new Error("Implement the isEachCardEven function");
 }
 
