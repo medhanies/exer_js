@@ -46,4 +46,5 @@ export function orderFromGrocer(query, onSuccessCallback, onErrorCallback) {
  */
 export function postOrder(variety, quantity) {
   //implement the postOrder function to create a query and order
+  orderFromGrocer({ variety, quantity }, onSuccess, onError);
 }
