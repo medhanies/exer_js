@@ -53,6 +53,8 @@ export function isEachCardEven(stack) {
  * @returns {boolean} true if the array contains odd card, false otherwise
  */
 export function doesStackIncludeOddCard(stack) {
+  const isOdd = stack.some((n) => n % 2 !== 0);
+  return isOdd;
   throw new Error("Implement the doesStackIncludesOddCard function");
 }
 
