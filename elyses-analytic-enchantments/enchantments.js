@@ -79,5 +79,7 @@ export function getFirstOddCard(stack) {
  * @returns {number} position of the first card that is even
  */
 export function getFirstEvenCardPosition(stack) {
+  const firstEven = stack.findIndex((n) => n % 2 === 0);
+  return firstEven;
   throw new Error("Implement the getFirstEvenCardPosition function");
 }
