@@ -42,4 +42,12 @@ export class ProgramWindow {
     const maxHeight = this.screenSize.height - this.position.y;
     this.size.height = Math.max(1, Math.min(size.height, maxHeight));
   }
+
+  move(newPosition) {
+    const maxPositionX = this.screenSize.width - this.size.width;
+    this.position.x = Math.max(0, Math.min(newPosition.x, maxPositionX));
+
+    const maxPositionY = this.screenSize.height - this.size.height;
+    this.position.y = Math.max(0, Math.min(newPosition.y, maxPositionY));
+  }
 }
