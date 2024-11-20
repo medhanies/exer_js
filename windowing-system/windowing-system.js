@@ -51,3 +51,13 @@ export class ProgramWindow {
     this.position.y = Math.max(0, Math.min(newPosition.y, maxPositionY));
   }
 }
+
+export function changeWindow(programWindow) {
+  // width 400, height 300
+  // position x = 100, y = 150
+  programWindow.size.width = 400;
+  programWindow.size.height = 300;
+  programWindow.position.x = 100;
+  programWindow.position.y = 150;
+  return programWindow;
+}
