@@ -32,4 +32,14 @@ export class ProgramWindow {
     this.size = new Size();
     this.position = new Position();
   }
+
+  resize(size) {
+    // Ensure width is at least 1 and does not exceed the screen width minus the window's x position
+    const maxWidth = this.screenSize.width - this.position.x;
+    this.size.width = Math.max(1, Math.min(size.width, maxWidth));
+
+    // Ensure height is at least 1 and does not exceed the screen height minus the window's y position
+    const maxHeight = this.screenSize.height - this.position.y;
+    this.size.height = Math.max(1, Math.min(size.height, maxHeight));
+  }
 }
