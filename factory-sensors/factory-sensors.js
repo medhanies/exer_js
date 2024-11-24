@@ -1,5 +1,7 @@
 // @ts-check
 
+import { error } from "console";
+
 export class ArgumentError extends Error {}
 
 export class OverheatingError extends Error {
@@ -30,7 +32,29 @@ export function checkHumidityLevel(humidityPercentage) {
  * @throws {ArgumentError|OverheatingError}
  */
 export function reportOverheating(temperature) {
-  throw new Error("Implement the reportOverheating function");
+  class ArgumentError extends Error {
+    constructor() {
+      super();
+      temperature === null;
+    }
+  }
+  class OverheatingError extends Error {}
+
+  try {
+    if (temperature === null) {
+      ArgumentError;
+    } else if (temperature > 500) {
+      OverheatingError;
+    }
+  } catch (error) {
+    if (error instanceof ArgumentError) {
+      throw new ArgumentError();
+    }
+    if (error instanceof OverheatingError) {
+      throw new OverheatingError("too high temp");
+    }
+  }
+  // throw new Error("Implement the reportOverheating function");
 }
 
 /**
